@@ -1,0 +1,11 @@
+[package]
+    description = "rust project-euler solutions!"
+    edition     = "2024"
+    name        = "euler-rs"
+    version     = "0.1.0"
+
+[profile.release]
+    codegen-units = 1
+    lto           = "thin"
+    opt-level     = 3
+    panic         = "abort"
