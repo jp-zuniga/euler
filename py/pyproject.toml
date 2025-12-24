@@ -1,0 +1,32 @@
+[project]
+    dependencies    = []
+    description     = "python project-euler solutions!"
+    name            = "euler-py"
+    readme          = "README.md"
+    requires-python = ">=3.13"
+    version         = "0.1.0"
+
+[tool.ruff.lint]
+    allowed-confusables = ["−"]
+    ignore = [
+        "COM812",
+        "D100",
+        "D103",
+        "D104",
+        "D200",
+        "D202",
+        "D203",
+        "D205",
+        "D212",
+        "T201",
+    ]
+
+    select = ["ALL"]
+
+    [tool.ruff.lint.isort]
+        case-sensitive         = true
+        combine-as-imports     = true
+        force-wrap-aliases     = true
+        order-by-type          = true
+        relative-imports-order = "closest-to-furthest"
+        required-imports       = ["from __future__ import annotations"]
