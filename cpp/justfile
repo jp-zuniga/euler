@@ -1,0 +1,28 @@
+set quiet
+
+cpp := "c++20"
+result := "out"
+
+bin := result / "euler"
+main := "src/main.cpp"
+
+[private]
+default:
+  just --list --list-heading $'  `euler-cpp` recipes:\n' --list-prefix "    "
+
+# ---------------------------------------------------------
+
+compile number:
+  mkdir -p {{result}}
+  sed -i "s/p[0-9]\+/p{{number}}/" {{main}}
+
+  clang++ {{main}} \
+          -std={{cpp}} \
+          -Iinclude \
+          -Isols \
+          -Wall \
+          -Wextra \
+          -o {{bin}}-{{number}}
+
+solve number: (compile number)
+  ./{{bin}}-{{number}}
