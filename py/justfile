@@ -1,5 +1,7 @@
 set quiet
 
+main := "main.py"
+
 [private]
 default:
   just --list --list-heading $'  `euler-py` recipes:\n' --list-prefix "    "
@@ -14,3 +16,7 @@ fmt:
 
 lint:
   ruff check --unsafe-fixes
+
+solve number:
+  sed -i "s/p[0-9]\+/p{{number}}/" {{main}}
+  uv run {{main}}

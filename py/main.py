@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from src import sols
+from src.sols import p56
 from src.utils import exec_sol
 
 
 def main() -> None:
-    exec_sol(sols.p56.solve)
+    exec_sol(p56.solve)
 
 
 if __name__ == "__main__":
