@@ -18,5 +18,13 @@ lint:
   ruff check --unsafe-fixes
 
 solve number:
+  #!/usr/bin/env bash
+  sol="src/sols/p{{number}}.py"
+
+  if [ ! -f "$sol" ]; then
+    echo "$sol doesn't exist!"
+    exit 1
+  fi
+
   sed -i "s/p[0-9]\+/p{{number}}/" {{main}}
   uv run {{main}}

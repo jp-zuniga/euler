@@ -13,6 +13,14 @@ default:
 # ---------------------------------------------------------
 
 compile number:
+  #!/usr/bin/env bash
+  sol="src/sols/p{{number}}.hpp"
+
+  if [ ! -f "$sol" ]; then
+    echo "$sol doesn't exist!"
+    exit 1
+  fi
+
   mkdir -p {{result}}
   sed -i "s/p[0-9]\+/p{{number}}/" {{main}}
 
