@@ -1,6 +1,6 @@
-#include "sols/p17.hpp"
+#include "sols/p145.hpp"
 
 int main() {
-  solve_p17();
+  solve_p145();
   return 0;
 }
