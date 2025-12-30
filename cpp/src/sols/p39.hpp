@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=39
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=39
+// --------------------------------------------------------------------------------------
 // Let p be the perimeter of a right-angle triangle with integer sides.
 // For which value of p (<= 1000) is the number of solutions maximized?
 
@@ -10,6 +10,8 @@
 #include <iostream>
 
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline uint64_t count_solutions(const uint64_t &p) {
   const uint64_t third_perimeter = p / 3;
@@ -34,7 +36,7 @@ inline uint64_t count_solutions(const uint64_t &p) {
 }
 
 inline void solve_p39() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t limit = 1e3;
   uint64_t max_p = 0;
@@ -51,7 +53,7 @@ inline void solve_p39() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Perimeter with the most solutions: " << max_p << "\n";
 

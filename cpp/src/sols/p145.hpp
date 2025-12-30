@@ -1,8 +1,8 @@
-// Problem URL: https://projecteuler.net/problem=145
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=145
+// --------------------------------------------------------------------------------------
 // Reversible numbers are numbers for which (n + reverse(n)) has only odd
 // numbers.
-// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 // Find how many reversible numbers exist below 1 billion.
 
 // optimize!
@@ -12,6 +12,8 @@
 #include <iostream>
 
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline uint64_t reverse(uint64_t num) {
   uint64_t reversed = 0;
@@ -46,7 +48,7 @@ inline bool is_reversible(const uint64_t &num) {
 }
 
 inline void solve_p145() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t limit = 1e9;
   uint64_t count = 0;
@@ -62,7 +64,7 @@ inline void solve_p145() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Reversible numbers below " << limit << ": " << count << "\n";
 

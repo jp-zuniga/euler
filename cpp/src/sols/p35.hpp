@@ -1,8 +1,8 @@
-// Problem URL: https://projecteuler.net/problem=35
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=35
+// --------------------------------------------------------------------------------------
 // Circular primes are primes that remain prime for all rotations of their
 // digits.
-// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 // Find all the circular primes below 1 million.
 
 // optimize < 5ms
@@ -15,6 +15,8 @@
 
 #include "include/primality.hpp"
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline bool has_problem_digits(uint64_t num) {
   // if num has any even digits,
@@ -75,7 +77,7 @@ inline bool is_circular(const std::vector<uint64_t> &powers,
 }
 
 inline void solve_p35() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t limit = 1e6;
 
@@ -121,7 +123,7 @@ inline void solve_p35() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Number of circular primes below " << limit << ": "
             << circular_count << "\n";

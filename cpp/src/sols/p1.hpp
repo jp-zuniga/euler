@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=1
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=1
+// -------------------------------------------------------------------------------------
 // Find the sum of all the multiples of 3 and 5 below 1,000.
 
 #include <chrono>
@@ -8,6 +8,8 @@
 
 #include "include/math-utils.hpp"
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline uint64_t sum_divisible_by_n(const uint64_t &limit, const uint64_t &n) {
   // the sum of all numbers up to a certain limit divisible by n
@@ -26,7 +28,7 @@ inline uint64_t sum_divisible_by_n(const uint64_t &limit, const uint64_t &n) {
 }
 
 inline void solve_p1() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t limit = 1e3;
   constexpr uint64_t a = 3;
@@ -42,7 +44,7 @@ inline void solve_p1() {
       (sum_divisible_by_n(limit, a) + sum_divisible_by_n(limit, b) -
        sum_divisible_by_n(limit, lcm(a, b)));
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Sum of all multiples of 3 and 5 below " << limit << ": "
             << multiples_sum << "\n";

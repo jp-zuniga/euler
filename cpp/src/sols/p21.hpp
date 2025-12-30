@@ -1,8 +1,8 @@
-// Problem URL: https://projecteuler.net/problem=21
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=21
+// --------------------------------------------------------------------------------------
 // Amicable numbers: numbers whose sum of divisors are
 // equal to each other (but the numbers are not equal)
-// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 // Find the sum of all amicable numbers below 10,000.
 
 // optimize < 1ms
@@ -14,8 +14,10 @@
 #include "include/math-utils.hpp"
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p21() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t limit = 1e4;
   uint64_t amicable_sum = 0;
@@ -29,7 +31,7 @@ inline void solve_p21() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Sum of all amicable numbers under " << limit << ": "
             << amicable_sum << "\n";

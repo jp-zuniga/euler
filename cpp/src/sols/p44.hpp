@@ -1,11 +1,11 @@
-// Problem URL: https://projecteuler.net/problem=44
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=44
+// --------------------------------------------------------------------------------------
 // P-n = (n * (3n - 1)) / 2
-// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 // Find the pair of pentagonal numbers, j and k, for which:
 //   - their sum and difference are both pentagonal
 //   - d = |j - k| is minimized
-// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 // What is the value of d?
 
 // optimize!
@@ -19,6 +19,8 @@
 #include "include/math-utils.hpp"
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline std::vector<uint64_t> find_pentagonals(const uint64_t &n) {
   std::vector<uint64_t> pentagonals;
 
@@ -31,7 +33,7 @@ inline std::vector<uint64_t> find_pentagonals(const uint64_t &n) {
 }
 
 inline void solve_p44() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t search_limit = 5e3;
   uint64_t diff = 0;
@@ -55,7 +57,7 @@ inline void solve_p44() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Minimum difference produced by extra-pentagonal numbers: "
             << min_d << "\n";

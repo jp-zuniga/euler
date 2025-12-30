@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=15
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=15
+// -------------------------------------------------------------------------------------
 // In a 20x20 grid, how many unique routes are there from the upper left corner
 // to the bottom right corner, when the only allowed moves are right and down?
 
@@ -10,8 +10,10 @@
 #include "include/math-utils.hpp"
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p15() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   // dimensions of the grid
   constexpr uint64_t r = 2e1;
@@ -30,7 +32,7 @@ inline void solve_p15() {
 
   uint64_t answer = nCr(n, r);
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Number of possible routes: " << answer << "\n";
 

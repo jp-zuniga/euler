@@ -1,10 +1,10 @@
-// Problem URL: https://projecteuler.net/problem=67
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=67
+// -------------------------------------------------------------------------------------
 // Given a "triangle" of numbers:
 // |   3   | A sum can be found by starting at the top of the triangle
 // |  7 4  | and moving to adjacent numbers on the row below. The maximum
 // | 2 4 6 | total of the example triangle is: 3 + 7 + 4 = 14.
-// --------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // Find the maximum total sum from top to bottom for the given triangle.
 
 #include <chrono>
@@ -17,6 +17,8 @@
 #include <vector>
 
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 namespace fs = std::filesystem;
 
@@ -46,7 +48,7 @@ read_triangle(fs::path triangle_path) {
 }
 
 inline void solve_p67() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   const fs::path file_path =
       fs::current_path().parent_path() / "inputs" / "67-triangle.txt";
@@ -59,7 +61,7 @@ inline void solve_p67() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Maximum sum in triangle: " << triangle[0][0] << "\n";
 

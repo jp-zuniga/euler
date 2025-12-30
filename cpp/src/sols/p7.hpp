@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=7
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=7
+// -------------------------------------------------------------------------------------
 // Find the 10,001st prime number.
 
 #include <chrono>
@@ -10,8 +10,10 @@
 #include "include/primality.hpp"
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p7() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t prime_index = 1e4 + 1;
 
@@ -39,7 +41,7 @@ inline void solve_p7() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Prime #" << prime_index << ": " << answer << "\n";
 

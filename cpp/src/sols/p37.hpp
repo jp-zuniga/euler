@@ -1,8 +1,8 @@
-// Problem URL: https://projecteuler.net/problem=37
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=37
+// --------------------------------------------------------------------------------------
 // Truncatable primes are primes that can continuously have
 // their digits removed from either side and still be prime.
-// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 // Find the sum of all truncatable primes.
 
 // optimize!
@@ -15,6 +15,8 @@
 
 #include "include/primality.hpp"
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline bool is_truncatable(const std::vector<uint64_t> &powers,
                            const std::vector<bool> &sieve,
@@ -57,7 +59,7 @@ inline bool is_truncatable(const std::vector<uint64_t> &powers,
 }
 
 inline void solve_p37() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t limit = 1e6;
 
@@ -93,7 +95,7 @@ inline void solve_p37() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Sum of all truncatable primes less than " << limit << ": "
             << sum_truncs << "\n";

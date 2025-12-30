@@ -1,9 +1,9 @@
-// Problem URL: https://projecteuler.net/problem=9
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=9
+// -------------------------------------------------------------------------------------
 // Pythagorean triplet: 3 natural numbers for which:
 //   - a < b < c
 //   - a^2 + b^2 = c^2
-// --------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // Find the product of the pythagorean triplet for which a + b + c = 1,000.
 
 // simplify to one loop by creating equations for a and b in terms of c?
@@ -14,8 +14,10 @@
 
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p9() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t abc_sum = 1e3;
   uint64_t product = 1;
@@ -34,7 +36,7 @@ inline void solve_p9() {
       if ((a < b) && (a + b + c == abc_sum) && (a * a + b * b == c * c)) {
         product = a * b * c;
 
-        auto end = std::chrono::steady_clock::now();
+        auto end = steady_clock::now();
 
         std::cout << "Product of special Pythagorean triplet: " << product
                   << "\n";

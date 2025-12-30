@@ -1,8 +1,8 @@
-// Problem URL: https://projecteuler.net/problem=27
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=27
+// --------------------------------------------------------------------------------------
 // Considering quadratics of the form:
 // n^2 + an + b, where |a| < 1000, |b| <= 1000, n >= 0
-// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 // Find the product of the coefficients, a and b, that produces the
 // maximum number of primes for consecutive values of n.
 
@@ -16,8 +16,10 @@
 #include "include/primality.hpp"
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p27() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr int64_t coeff_limit = 1e3;
   int64_t n = 0;
@@ -46,7 +48,7 @@ inline void solve_p27() {
 
   int64_t product = max_a * max_b;
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Product of prime-generating coefficients: " << product << "\n";
 

@@ -1,10 +1,10 @@
-// Problem URL: https://projecteuler.net/problem=45
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=45
+// -------------------------------------------------------------------------------------
 // Triangle, pentagonal, and hexagonal numbers have the following formulas:
 // T-n = n(n + 1) / 2
 // P-n = n(3n - 1) / 2
 // H-n = n(2n - 1)
-// --------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // 40,755 is T-285, P-165, H-143.
 // Find the next triangle number that is also pentagonal and hexagonal.
 
@@ -15,8 +15,10 @@
 #include "include/math-utils.hpp"
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p45() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   // since all hexagonal numbers are triangular numbers
   // (by virtue of being a subset of them), only a
@@ -38,7 +40,7 @@ inline void solve_p45() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Next triangular number that is pentagonal and "
             << "hexagonal: " << answer << "\n";

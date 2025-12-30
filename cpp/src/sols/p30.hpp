@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=30
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=30
+// -------------------------------------------------------------------------------------
 // Find the sum of all numbers that can be written as
 // the sum of the fifth power of their digits.
 
@@ -11,6 +11,8 @@
 #include <iostream>
 
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline uint64_t calculate_max_digits() {
   const uint64_t max_fifth_power = std::pow(9, 5);
@@ -24,7 +26,7 @@ inline uint64_t calculate_max_digits() {
 }
 
 inline void solve_p30() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   const uint64_t limit = calculate_max_digits();
   uint64_t answer = 0;
@@ -46,7 +48,7 @@ inline void solve_p30() {
     sum_fifths = 0;
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Sum of special fifth-power digit-sums: " << answer << "\n";
 

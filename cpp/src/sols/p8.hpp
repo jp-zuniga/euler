@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=8
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=8
+// -------------------------------------------------------------------------------------
 // Find the 13 adjacent digits in the 1,000-digit number that have the
 // biggest product.
 
@@ -10,8 +10,10 @@
 
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p8() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t big_num_digits = 1e3;
   constexpr std::array<uint8_t, big_num_digits> big_num = {
@@ -72,7 +74,7 @@ inline void solve_p8() {
     biggest_prod = std::max(current_prod, biggest_prod);
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Biggest product found: " << biggest_prod << "\n";
 

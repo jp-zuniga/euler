@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=46
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=46
+// --------------------------------------------------------------------------------------
 // Find the smallest odd composite number that cannot
 // be written as the sum of a prime and twice a square.
 
@@ -13,6 +13,8 @@
 
 #include "include/primality.hpp"
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline bool check_conjecture(const std::vector<bool> &sieve,
                              const uint64_t &num) {
@@ -50,7 +52,7 @@ inline bool check_conjecture(const std::vector<bool> &sieve,
 }
 
 inline void solve_p46() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t prime_limit = 1e6;
 
@@ -72,7 +74,7 @@ inline void solve_p46() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Smallest odd composite number that disproves Goldbach's "
                "other conjecture: "

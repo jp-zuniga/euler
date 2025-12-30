@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=17
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=17
+// --------------------------------------------------------------------------------------
 // If all the numbers from to 1 to 1,000 (inclusive)
 // were written out in words, how many letters would be used?
 
@@ -13,6 +13,8 @@
 #include <string>
 
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline std::string to_word(const uint32_t &num) {
   // store easy cases in a dictionary
@@ -98,7 +100,7 @@ inline uint32_t count_letters(const std::string &num_word) {
 }
 
 inline void solve_p17() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint32_t limit = 1e3;
   uint32_t letter_count = 0;
@@ -107,7 +109,7 @@ inline void solve_p17() {
     letter_count += count_letters(to_word(i));
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Number of letters used: " << letter_count << "\n";
 

@@ -1,8 +1,8 @@
-// Problem URL: https://projecteuler.net/problem=23
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=23
+// --------------------------------------------------------------------------------------
 // Abundant number: a number for which the total sum of
 // its proper divisors is greater than itself
-// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 // Find the sum of all the positive integers which
 // cannot be written as the sum of two abundant numbers.
 
@@ -15,6 +15,8 @@
 
 #include "include/math-utils.hpp"
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline bool is_abundant(const uint32_t &num) { return sum_divisors(num) > num; }
 
@@ -32,7 +34,7 @@ inline std::vector<uint32_t> find_abundants(const uint32_t &limit) {
 }
 
 inline void solve_p23() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint32_t limit = 28123;
   uint32_t total_sum = 0;
@@ -52,7 +54,7 @@ inline void solve_p23() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Sum of all positive integers that are non-abundant sums: "
             << total_sum << "\n";

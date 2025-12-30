@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=4
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=4
+// -------------------------------------------------------------------------------------
 // Find the largest palindrome made from the product of two 3-digit numbers.
 
 #include <chrono>
@@ -7,6 +7,8 @@
 #include <iostream>
 
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline bool is_palindrome(uint64_t num) {
   if (num < 10) {
@@ -48,7 +50,7 @@ inline bool is_palindrome(uint64_t num) {
 }
 
 inline void solve_p4() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t upper_bound = 1e3 - 1;
   constexpr uint64_t lower_bound = 1e2;
@@ -76,7 +78,7 @@ inline void solve_p4() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout
       << "Largest palindrome made from the product of two 3-digit numbers: "

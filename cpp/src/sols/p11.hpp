@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=11
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=11
+// -------------------------------------------------------------------------------------
 // Find the greatest product of 4 adjacent numbers in any direction
 // (up, down, left, right, diagonally) in a 20x20 grid.
 
@@ -9,6 +9,8 @@
 #include <vector>
 
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline int64_t mult_and_compare(const uint64_t &big_prod, const uint64_t &a,
                                 const uint64_t &b, const uint64_t &c,
@@ -80,7 +82,7 @@ inline uint64_t find_biggest(const std::vector<std::vector<uint8_t>> &grid,
 }
 
 inline void solve_p11() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr size_t grid_size = 20;
   const std::vector<std::vector<uint8_t>> grid = {
@@ -126,7 +128,7 @@ inline void solve_p11() {
 
   uint64_t big_prod = find_biggest(grid, grid_size);
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Biggest product found: " << big_prod << "\n";
 

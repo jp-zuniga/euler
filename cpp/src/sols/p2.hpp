@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=2
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=2
+// -------------------------------------------------------------------------------------
 // Find the sum of all the even Fibonacci numbers below 4 million.
 
 #include <chrono>
@@ -7,6 +7,8 @@
 #include <iostream>
 
 #include "include/timer.hpp"
+
+using namespace std::chrono;
 
 inline uint64_t sum_even_fibs(const uint64_t &limit) {
   // there's no need to use conditionals to check for evenness,
@@ -34,12 +36,12 @@ inline uint64_t sum_even_fibs(const uint64_t &limit) {
 }
 
 inline void solve_p2() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t limit = 4e6;
   uint64_t answer = sum_even_fibs(limit);
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Sum of all even Fibonacci numbers below " << limit << ": "
             << answer << "\n";

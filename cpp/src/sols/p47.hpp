@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=47
-// ---------------------------------------------------------------------------------
+// https://projecteuler.net/problem=47
+// --------------------------------------------------------------------------------------
 // Find the first four consecutive integers to have four distinct prime
 // factors each.
 
@@ -12,8 +12,10 @@
 #include "include/primality.hpp"
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p47() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   uint64_t counter = 0;
   uint64_t i = 0;
@@ -33,7 +35,7 @@ inline void solve_p47() {
     }
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "First of 4 consecutive integers to have "
             << "4 distinct prime factors each is: " << i - 3 << "\n";

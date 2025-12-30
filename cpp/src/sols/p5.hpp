@@ -1,5 +1,5 @@
-// Problem URL: https://projecteuler.net/problem=5
-// --------------------------------------------------------------------------------
+// https://projecteuler.net/problem=5
+// -------------------------------------------------------------------------------------
 // Find the smallest number evenly divisible by all numbers from 1 to 20.
 
 #include <chrono>
@@ -9,8 +9,10 @@
 #include "include/math-utils.hpp"
 #include "include/timer.hpp"
 
+using namespace std::chrono;
+
 inline void solve_p5() {
-  auto start = std::chrono::steady_clock::now();
+  auto start = steady_clock::now();
 
   constexpr uint64_t n = 2e1;
   uint64_t answer = 1;
@@ -20,7 +22,7 @@ inline void solve_p5() {
     answer = lcm(answer, i);
   }
 
-  auto end = std::chrono::steady_clock::now();
+  auto end = steady_clock::now();
 
   std::cout << "Smallest number evenly divisible by all numbers from 1 to " << n
             << ": " << answer << "\n";
