@@ -1,3 +1,7 @@
+#[allow(dead_code)]
+mod sols;
+mod utils;
+
 fn main() {
-    println!("Hello, world!");
+    sols::p2::solve_p2();
 }
