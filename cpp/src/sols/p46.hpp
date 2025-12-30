@@ -12,7 +12,7 @@
 #include <vector>
 
 #include "include/primality.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -80,5 +80,5 @@ inline void solve_p46() {
                "other conjecture: "
             << composite << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

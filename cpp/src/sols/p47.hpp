@@ -10,7 +10,7 @@
 #include <vector>
 
 #include "include/primality.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -40,5 +40,5 @@ inline void solve_p47() {
   std::cout << "First of 4 consecutive integers to have "
             << "4 distinct prime factors each is: " << i - 3 << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

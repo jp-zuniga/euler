@@ -9,7 +9,7 @@
 #include <iostream>
 
 #include "include/primality.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -33,5 +33,5 @@ inline void solve_p10() {
 
   std::cout << "Sum of all primes below " << limit << ": " << prime_sum << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

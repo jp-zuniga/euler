@@ -4,7 +4,7 @@
 
 use std::time::Instant;
 
-use crate::utils::{lcm, print_time};
+use crate::utils::{lcm, stopwatch};
 
 #[inline]
 const fn sum_divisible_by_n(limit: i32, n: i32) -> i32 {
@@ -28,5 +28,5 @@ pub fn solve_p1() {
     let duration = start.elapsed();
 
     println!("Sum of all multiples of {A} and {B} below {LIMIT}: {multiples_sum}");
-    print_time(duration);
+    stopwatch(duration);
 }

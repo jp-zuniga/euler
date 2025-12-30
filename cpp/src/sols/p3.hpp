@@ -9,7 +9,7 @@
 #include <vector>
 
 #include "include/primality.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -30,5 +30,5 @@ inline void solve_p3() {
   std::cout << "Largest prime factor of " << big_num << ": " << largest_factor
             << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

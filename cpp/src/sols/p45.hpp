@@ -13,7 +13,7 @@
 #include <iostream>
 
 #include "include/math-utils.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -45,5 +45,5 @@ inline void solve_p45() {
   std::cout << "Next triangular number that is pentagonal and "
             << "hexagonal: " << answer << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

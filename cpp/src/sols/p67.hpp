@@ -16,7 +16,7 @@
 #include <string>
 #include <vector>
 
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -65,5 +65,5 @@ inline void solve_p67() {
 
   std::cout << "Maximum sum in triangle: " << triangle[0][0] << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

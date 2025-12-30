@@ -12,7 +12,7 @@
 #include <iostream>
 
 #include "include/math-utils.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -36,5 +36,5 @@ inline void solve_p21() {
   std::cout << "Sum of all amicable numbers under " << limit << ": "
             << amicable_sum << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

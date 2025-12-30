@@ -10,7 +10,7 @@
 #include <cstdint>
 #include <iostream>
 
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -52,5 +52,5 @@ inline void solve_p30() {
 
   std::cout << "Sum of special fifth-power digit-sums: " << answer << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

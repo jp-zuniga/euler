@@ -1,6 +1,6 @@
 use std::time::Instant;
 
-use crate::utils::print_time;
+use crate::utils::stopwatch;
 
 #[inline]
 const fn sum_even_fibs(limit: i32) -> i32 {
@@ -28,5 +28,5 @@ pub fn solve_p2() {
     let duration = start.elapsed();
 
     println!("Sum of all even Fibonacci numbers below {LIMIT}: {sum}");
-    print_time(duration);
+    stopwatch(duration);
 }

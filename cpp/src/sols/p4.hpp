@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <iostream>
 
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -84,5 +84,5 @@ inline void solve_p4() {
       << "Largest palindrome made from the product of two 3-digit numbers: "
       << largest_pal << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

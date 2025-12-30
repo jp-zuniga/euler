@@ -14,7 +14,7 @@
 #include <vector>
 
 #include "include/primality.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -128,5 +128,5 @@ inline void solve_p35() {
   std::cout << "Number of circular primes below " << limit << ": "
             << circular_count << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

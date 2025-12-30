@@ -12,7 +12,7 @@
 #include <cstdint>
 #include <iostream>
 
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -52,5 +52,5 @@ inline void solve_p14() {
   std::cout << "Length of " << longest_start_num
             << "'s Collatz sequence: " << longest_seq << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

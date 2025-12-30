@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -132,5 +132,5 @@ inline void solve_p11() {
 
   std::cout << "Biggest product found: " << big_prod << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

@@ -21,7 +21,7 @@ init num:
 
   use std::time::Instant;
 
-  use crate::utils::print_time;
+  use crate::utils::stopwatch;
 
   #[inline]
   pub fn solve_p{{num}}() {
@@ -29,7 +29,7 @@ init num:
 
       let duration = start.elapsed();
 
-      print_time(duration);
+      stopwatch(duration);
   }
   """
 

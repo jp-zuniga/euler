@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <iostream>
 
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -26,5 +26,5 @@ inline void solve_p6() {
   std::cout << "Difference between sum of squares and squared sum: " << answer
             << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

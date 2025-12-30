@@ -11,7 +11,7 @@
 use std::f64::consts::PI;
 use std::time::Instant;
 
-use crate::utils::print_time;
+use crate::utils::stopwatch;
 
 #[inline]
 fn integral(x: f64) -> f64 {
@@ -57,5 +57,5 @@ pub fn solve_p587() {
     let duration = start.elapsed();
 
     println!("{n}");
-    print_time(duration);
+    stopwatch(duration);
 }

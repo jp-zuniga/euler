@@ -8,7 +8,7 @@
 #include <iostream>
 
 #include "include/math-utils.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -36,5 +36,5 @@ inline void solve_p15() {
 
   std::cout << "Number of possible routes: " << answer << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

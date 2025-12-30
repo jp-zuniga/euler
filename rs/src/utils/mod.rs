@@ -1,5 +1,10 @@
+use std::time::Duration;
+
 mod math;
-mod stopwatch;
 
 pub use math::lcm;
-pub use stopwatch::print_time;
+
+#[inline]
+pub fn stopwatch(duration: Duration) {
+    println!("Execution time: {:.6}ms", duration.as_secs_f64() * 1000.0);
+}

@@ -8,7 +8,7 @@
 #include <iostream>
 
 #include "include/primality.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -45,5 +45,5 @@ inline void solve_p7() {
 
   std::cout << "Prime #" << prime_index << ": " << answer << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

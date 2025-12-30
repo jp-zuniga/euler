@@ -17,7 +17,7 @@
 #include <vector>
 
 #include "include/math-utils.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -62,5 +62,5 @@ inline void solve_p44() {
   std::cout << "Minimum difference produced by extra-pentagonal numbers: "
             << min_d << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

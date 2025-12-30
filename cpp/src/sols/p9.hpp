@@ -12,7 +12,7 @@
 #include <cstdint>
 #include <iostream>
 
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -42,7 +42,7 @@ inline void solve_p9() {
                   << "\n";
 
         // exit loops immediately
-        print_time(start, end);
+        stopwatch(start, end);
         return;
       }
     }

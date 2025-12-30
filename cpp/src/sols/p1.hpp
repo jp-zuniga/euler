@@ -7,7 +7,7 @@
 #include <iostream>
 
 #include "include/math-utils.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -49,5 +49,5 @@ inline void solve_p1() {
   std::cout << "Sum of all multiples of 3 and 5 below " << limit << ": "
             << multiples_sum << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

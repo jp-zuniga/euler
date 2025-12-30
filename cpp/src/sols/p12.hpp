@@ -15,7 +15,7 @@
 #include <vector>
 
 #include "include/primality.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -67,5 +67,5 @@ inline void solve_p12() {
   std::cout << "First triangle number with more than " << divisor_count
             << " divisors: " << triangle_num << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

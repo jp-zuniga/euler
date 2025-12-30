@@ -12,7 +12,7 @@
 #include <map>
 #include <string>
 
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -113,5 +113,5 @@ inline void solve_p17() {
 
   std::cout << "Number of letters used: " << letter_count << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }

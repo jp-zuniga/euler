@@ -28,7 +28,7 @@ init num:
   #include <cstdint>
   #include <iostream>
 
-  #include \"include/timer.hpp\"
+  #include \"include/stopwatch.hpp\"
 
   using namespace std::chrono;
 
@@ -37,7 +37,7 @@ init num:
 
     auto end = steady_clock::now();
 
-    print_time(start, end);
+    stopwatch(start, end);
   }
   """
 

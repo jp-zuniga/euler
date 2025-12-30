@@ -14,7 +14,7 @@
 #include <vector>
 
 #include "include/math-utils.hpp"
-#include "include/timer.hpp"
+#include "include/stopwatch.hpp"
 
 using namespace std::chrono;
 
@@ -59,5 +59,5 @@ inline void solve_p23() {
   std::cout << "Sum of all positive integers that are non-abundant sums: "
             << total_sum << "\n";
 
-  print_time(start, end);
+  stopwatch(start, end);
 }
