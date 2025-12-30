@@ -6,22 +6,57 @@ result := "out"
 bin := result / "euler"
 main := "src/main.cpp"
 
+# ---------------------------------------------------------
+
 [private]
 default:
   just --list --list-heading $'  `euler-cpp` recipes:\n' --list-prefix "    "
 
 # ---------------------------------------------------------
 
-compile number:
+init num:
   #!/usr/bin/env bash
-  sol="src/sols/p{{number}}.hpp"
+  set -euo pipefail
+
+  file="src/sols/p{{num}}.hpp"
+
+  boilerplate="""
+  // https://projecteuler.net/problem={{num}}
+  // -------------------------------------------------------------------------------------
+
+  #include <chrono>
+  #include <cstdint>
+  #include <iostream>
+
+  #include \"include/timer.hpp\"
+
+  using namespace std::chrono;
+
+  inline void solve_p{{num}}() {
+    auto start = steady_clock::now();
+
+    auto end = steady_clock::now();
+
+    print_time(start, end);
+  }
+  """
+
+  echo "$boilerplate" | sed "1d" > $file
+  clang-format -i $file
+
+# ---------------------------------------------------------
+
+compile num:
+  #!/usr/bin/env bash
+
+  sol="src/sols/p{{num}}.hpp"
 
   if [ ! -f "$sol" ]; then
     echo "$sol doesn't exist!"
     exit 1
   fi
 
-  sed -i "s/p[0-9]\+/p{{number}}/g" {{main}}
+  sed -i "s/p[0-9]\+/p{{num}}/g" {{main}}
 
   mkdir -p {{result}}
   clang++ {{main}} \
@@ -30,7 +65,7 @@ compile number:
           -Isols \
           -Wall \
           -Wextra \
-          -o {{bin}}-{{number}}
+          -o {{bin}}-{{num}}
 
-solve number: (compile number)
-  ./{{bin}}-{{number}}
+solve num: (compile num)
+  ./{{bin}}-{{num}}

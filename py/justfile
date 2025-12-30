@@ -1,6 +1,6 @@
 set quiet
 
-main := "main.py"
+# ---------------------------------------------------------
 
 [private]
 default:
@@ -17,15 +17,54 @@ fmt:
 lint:
   ruff check --unsafe-fixes
 
-solve number:
+# ---------------------------------------------------------
+
+init num:
   #!/usr/bin/env bash
-  sol="src/sols/p{{number}}.py"
+  set -euo pipefail
+
+  p="p{{num}}"
+
+  file="src/sols/$p.py"
+  init="src/sols/__init__.py"
+
+  from="from . import"
+  all="__all__: list\[str\] = \["
+
+  new_all="$all '$p',"
+  new_from="$from $p,"
+
+  boilerplate="""
+  # https://projecteuler.net/problem={{num}}
+  # -------------------------------------------------------------------------------
+
+  from __future__ import annotations
+
+
+  def solve() -> None:
+      pass
+  """
+
+  sed -i "s/$all/$new_all/g" $init
+  sed -i "s/$from/$new_from/g" $init
+  echo "$boilerplate" > $file
+
+  ruff check --fix --unsafe-fixes
+  ruff format
+
+# ---------------------------------------------------------
+
+solve num:
+  #!/usr/bin/env bash
+
+  main="main.py"
+  sol="src/sols/p{{num}}.py"
 
   if [ ! -f "$sol" ]; then
     echo "$sol doesn't exist!"
     exit 1
   fi
 
-  sed -i "s/p[0-9]\+/p{{number}}/g" {{main}}
+  sed -i "s/p[0-9]\+/p{{num}}/g" $main
 
-  uv run {{main}}
+  uv run $main

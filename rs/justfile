@@ -1,6 +1,6 @@
 set quiet
 
-main := "src/main.rs"
+# ---------------------------------------------------------
 
 [private]
 default:
@@ -8,15 +8,48 @@ default:
 
 # ---------------------------------------------------------
 
-solve number:
+init num:
   #!/usr/bin/env bash
-  sol="src/sols/p{{number}}.rs"
+  set -euo pipefail
+
+  dir="src/sols"
+  mod="pub mod p{{num}};"
+
+  boilerplate="""
+  // https://projecteuler.net/problem={{num}}
+  // -------------------------------------------------------------------------------------
+
+  use std::time::Instant;
+
+  use crate::utils::print_time;
+
+  #[inline]
+  pub fn solve_p{{num}}() {
+      let start = Instant::now();
+
+      let duration = start.elapsed();
+
+      print_time(duration);
+  }
+  """
+
+  echo "$boilerplate" > $dir/p{{num}}.rs
+  echo "$mod" >> $dir/mod.rs
+  cargo fmt
+
+# ---------------------------------------------------------
+
+solve num:
+  #!/usr/bin/env bash
+  set -euo pipefail
+
+  sol="src/sols/p{{num}}.rs"
 
   if [ ! -f "$sol" ]; then
     echo "$sol doesn't exist!"
     exit 1
   fi
 
-  sed -i "s/p[0-9]\+/p{{number}}/g" {{main}}
+  sed -i "s/p[0-9]\+/p{{num}}/g" src/main.rs
 
   cargo run -r
