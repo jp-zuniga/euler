@@ -2,6 +2,7 @@ use std::time::Instant;
 
 use crate::utils::print_time;
 
+#[inline]
 const fn sum_even_fibs(limit: i32) -> i32 {
     let mut sum = 0;
     let mut a = 1;
@@ -19,7 +20,7 @@ const fn sum_even_fibs(limit: i32) -> i32 {
 }
 
 pub fn solve_p2() {
-    const LIMIT: i32 = 4000000;
+    const LIMIT: i32 = 4_000_000;
 
     let start = Instant::now();
     let sum = sum_even_fibs(LIMIT);

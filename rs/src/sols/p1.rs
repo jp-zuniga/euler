@@ -6,6 +6,7 @@ use std::time::Instant;
 
 use crate::utils::{lcm, print_time};
 
+#[inline]
 const fn sum_divisible_by_n(limit: i32, n: i32) -> i32 {
     let x = limit / n;
 
@@ -13,7 +14,7 @@ const fn sum_divisible_by_n(limit: i32, n: i32) -> i32 {
 }
 
 pub fn solve_p1() {
-    const LIMIT: i32 = 1000;
+    const LIMIT: i32 = 1_000;
     const A: i32 = 3;
     const B: i32 = 5;
 
