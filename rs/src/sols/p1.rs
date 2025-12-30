@@ -13,6 +13,7 @@ const fn sum_divisible_by_n(limit: i32, n: i32) -> i32 {
     (n * x * (x + 1)) / 2
 }
 
+#[inline]
 pub fn solve_p1() {
     const LIMIT: i32 = 1_000;
     const A: i32 = 3;

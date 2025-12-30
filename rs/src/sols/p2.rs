@@ -19,6 +19,7 @@ const fn sum_even_fibs(limit: i32) -> i32 {
     sum
 }
 
+#[inline]
 pub fn solve_p2() {
     const LIMIT: i32 = 4_000_000;
 

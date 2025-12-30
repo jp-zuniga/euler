@@ -30,6 +30,7 @@ fn intersect(m: f64) -> f64 {
     (m + 1.0 - (2.0 * m).sqrt()) / ((m * m) + 1.0)
 }
 
+#[inline]
 pub fn solve_p587() {
     const B: f64 = 1.0;
     const L_SECTION: f64 = (4.0 - PI) / 4.0;
