@@ -21,9 +21,9 @@ compile number:
     exit 1
   fi
 
-  mkdir -p {{result}}
-  sed -i "s/p[0-9]\+/p{{number}}/" {{main}}
+  sed -i "s/p[0-9]\+/p{{number}}/g" {{main}}
 
+  mkdir -p {{result}}
   clang++ {{main}} \
           -std={{cpp}} \
           -Iinclude \

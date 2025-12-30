@@ -17,5 +17,6 @@ solve number:
     exit 1
   fi
 
-  sed -i "s/p[0-9]\+/p{{number}}/" {{main}}
-  cargo run -r {{main}}
+  sed -i "s/p[0-9]\+/p{{number}}/g" {{main}}
+
+  cargo run -r
