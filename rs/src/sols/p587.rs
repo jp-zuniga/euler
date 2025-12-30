@@ -1,15 +1,17 @@
 // https://projecteuler.net/problem=587
 // -------------------------------------------------------------------------------------
+// A square is drawn around a circle. We shall call the blue region the L-section.
+// A line is drawn from the bottom left of the square to the top right.
+// We shall call the orange region a concave triangle.
+// -------------------------------------------------------------------------------------
+// What is the least value of n for which the concave triangle
+// occupies less than 0.1% of the L-section?
 
+#![allow(clippy::suboptimal_flops)]
 use std::f64::consts::PI;
 use std::time::Instant;
 
 use crate::utils::print_time;
-
-// #[inline]
-// fn circle(x: f64) -> f64 {
-//     1.0 - (1.0 - (x - 1.0).powi(2)).sqrt()
-// }
 
 #[inline]
 fn integral(x: f64) -> f64 {
@@ -38,7 +40,7 @@ pub fn solve_p587() {
     let mut n = 15;
 
     loop {
-        let m = 1.0 / n as f64;
+        let m = 1.0 / f64::from(n);
         let cm = intersect(m);
 
         let left_concave = (m * cm * cm) / 2.0;
