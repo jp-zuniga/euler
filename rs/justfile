@@ -1,0 +1,21 @@
+set quiet
+
+main := "src/main.rs"
+
+[private]
+default:
+  just --list --list-heading $'  `euler-rs` recipes:\n' --list-prefix "    "
+
+# ---------------------------------------------------------
+
+solve number:
+  #!/usr/bin/env bash
+  sol="src/sols/p{{number}}.rs"
+
+  if [ ! -f "$sol" ]; then
+    echo "$sol doesn't exist!"
+    exit 1
+  fi
+
+  sed -i "s/p[0-9]\+/p{{number}}/" {{main}}
+  cargo run -r {{main}}
