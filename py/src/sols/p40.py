@@ -1,4 +1,4 @@
-# Problem URL: https://projecteuler.net/problem=40
+# https://projecteuler.net/problem=40
 # -------------------------------------------------------------------------------
 # An irrational decimal fraction is created by concatenating the positive integers:
 # 0.123456789101112131415161718192021...
@@ -6,7 +6,7 @@
 # Find the product of the first, tenth, hundredth, thousandth,
 # ten-thousandth, hundred-thousandth, and millionth digit of this fraction.
 
-# ! optimize < 10ms
+# optimize < 10ms
 
 from __future__ import annotations
 

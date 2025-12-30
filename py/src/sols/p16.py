@@ -1,8 +1,6 @@
-# Problem URL: https://projecteuler.net/problem=16
+# https://projecteuler.net/problem=16
 # -------------------------------------------------------------------------------
 # Find the sum of the digits of 2^1000.
-
-# ? optimize < 0.1ms
 
 from __future__ import annotations
 

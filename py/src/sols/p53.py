@@ -1,10 +1,10 @@
-# Problem URL: https://projecteuler.net/problem=53
+# https://projecteuler.net/problem=53
 # -------------------------------------------------------------------------------
 # In combinatorics, nCr ("from n choose r") = n! / (r! * (n-r)!), where r <= n.
 # -------------------------------------------------------------------------------
 # For 1 <= n <= 100, how many values of nCr are greater than 1,000,000?
 
-# ! optimize < 5ms
+# optimize < 1ms
 
 from __future__ import annotations
 

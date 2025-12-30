@@ -1,9 +1,9 @@
-# Problem URL: https://projecteuler.net/problem=36
+# https://projecteuler.net/problem=36
 # -------------------------------------------------------------------------------
 # Find the sum of all numbers, under 1 million,
-# which are palindromic in base 10 *and* base 2.
+# which are palindromic in base 10 and base 2.
 
-# ! optimize < 10ms
+# optimize < 10ms
 
 from __future__ import annotations
 

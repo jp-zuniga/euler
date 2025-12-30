@@ -1,8 +1,8 @@
-# Problem URL: https://projecteuler.net/problem=56
+# https://projecteuler.net/problem=56
 # -------------------------------------------------------------------------------
 # For natural numbers a, b < 100, what is the maximum digital sum of a^b?
 
-# !!! optimize < 10ms
+# optimize < 10ms
 
 from __future__ import annotations
 

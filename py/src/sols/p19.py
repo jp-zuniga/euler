@@ -1,8 +1,8 @@
-# Problem URL: https://projecteuler.net/problem=19
+# https://projecteuler.net/problem=19
 # -------------------------------------------------------------------------------
 # How many Sundays fell on the first of the month during the 20th century?
 
-# ! optimize < 5ms
+# optimize < 5ms
 
 from __future__ import annotations
 

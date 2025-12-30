@@ -1,9 +1,9 @@
-# Problem URL: https://projecteuler.net/problem=34
+# https://projecteuler.net/problem=34
 # -------------------------------------------------------------------------------
 # Find the sum of all the numbers that are equal
 # to the sum of the factorial of their digits.
 
-# !!! optimize < 100ms
+# optimize < 100ms
 
 from __future__ import annotations
 

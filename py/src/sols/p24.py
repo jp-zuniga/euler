@@ -1,8 +1,8 @@
-# Problem URL: https://projecteuler.net/problem=24
+# https://projecteuler.net/problem=24
 # -------------------------------------------------------------------------------
 # Find the millionth lexicographic permutation of the digits 0-9.
 
-# !!! optimize < 50ms
+# optimize < 100ms
 
 from __future__ import annotations
 

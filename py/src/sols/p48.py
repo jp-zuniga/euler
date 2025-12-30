@@ -1,9 +1,9 @@
-# Problem URL: https://projecteuler.net/problem=48
+# https://projecteuler.net/problem=48
 # -------------------------------------------------------------------------------
 # Find the last 10 digits of the self powers series:
 # 1^1 + 2^2 + 3^3 + ... + 1000^1000
 
-# ! optimize < 5ms
+# optimize < 1ms
 
 from __future__ import annotations
 

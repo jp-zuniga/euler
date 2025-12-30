@@ -1,9 +1,9 @@
-# Problem URL: https://projecteuler.net/problem=29
+# https://projecteuler.net/problem=29
 # -------------------------------------------------------------------------------
 # Find the number of distinct terms produced by a^b,
 # where 2 <= a <= 100 and 2 <= b <= 100.
 
-# ! optimize < 1ms
+# optimize < 1ms
 
 from __future__ import annotations
 

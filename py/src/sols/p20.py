@@ -1,8 +1,6 @@
-# Problem URL: https://projecteuler.net/problem=20
+# https://projecteuler.net/problem=20
 # -------------------------------------------------------------------------------
-# Find the sum of the digits in `100!`.
-
-# ? optimize < 0.1ms
+# Find the sum of the digits in 100!
 
 from __future__ import annotations
 

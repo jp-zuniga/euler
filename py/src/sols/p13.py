@@ -1,4 +1,4 @@
-# Problem URL: https://projecteuler.net/problem=13
+# https://projecteuler.net/problem=13
 # -------------------------------------------------------------------------------
 # Find the first 10 digits of the sum of all the 50-digit numbers.
 
