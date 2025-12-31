@@ -4,7 +4,8 @@
 
 use std::time::Instant;
 
-use crate::utils::{lcm, stopwatch};
+use crate::utils::math::lcm;
+use crate::utils::stopwatch;
 
 #[inline]
 const fn sum_divisible_by_n(limit: u64, n: u64) -> u64 {
@@ -21,11 +22,11 @@ pub fn solve_p1() {
 
     let start = Instant::now();
 
-    let multiples_sum = sum_divisible_by_n(LIMIT, A) + sum_divisible_by_n(LIMIT, B)
+    let answer = sum_divisible_by_n(LIMIT, A) + sum_divisible_by_n(LIMIT, B)
         - sum_divisible_by_n(LIMIT, lcm(A, B));
 
     let duration = start.elapsed();
 
-    println!("Sum of all multiples of {A} and {B} below {LIMIT}: {multiples_sum}");
+    println!("{answer}");
     stopwatch(duration);
 }

@@ -1,10 +1,7 @@
 use std::time::Duration;
 
-mod math;
-mod primes;
-
-pub use math::lcm;
-pub use primes::{is_prime, prime_factors_of, prime_sieve_up_to, primes_up_to};
+pub mod math;
+pub mod primes;
 
 #[inline]
 pub fn stopwatch(duration: Duration) {

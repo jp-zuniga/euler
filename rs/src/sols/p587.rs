@@ -7,12 +7,12 @@
 // What is the least value of n for which the concave triangle
 // occupies less than 0.1% of the L-section?
 
-#![allow(clippy::suboptimal_flops)]
 use std::f64::consts::PI;
 use std::time::Instant;
 
 use crate::utils::stopwatch;
 
+#[allow(clippy::suboptimal_flops)]
 #[inline]
 fn integral(x: f64) -> f64 {
     let offset = x - 1.0;
@@ -25,11 +25,13 @@ fn integrate(a: f64, b: f64) -> f64 {
     integral(b) - integral(a)
 }
 
+#[allow(clippy::suboptimal_flops)]
 #[inline]
 fn intersect(m: f64) -> f64 {
     (m + 1.0 - (2.0 * m).sqrt()) / ((m * m) + 1.0)
 }
 
+#[allow(clippy::suboptimal_flops)]
 #[inline]
 pub fn solve_p587() {
     const B: f64 = 1.0;

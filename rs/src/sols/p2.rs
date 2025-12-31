@@ -28,9 +28,9 @@ pub fn solve_p2() {
     const LIMIT: i32 = 4_000_000;
 
     let start = Instant::now();
-    let sum = sum_even_fibs(LIMIT);
+    let answer = sum_even_fibs(LIMIT);
     let duration = start.elapsed();
 
-    println!("Sum of all even Fibonacci numbers below {LIMIT}: {sum}");
+    println!("{answer}");
     stopwatch(duration);
 }
