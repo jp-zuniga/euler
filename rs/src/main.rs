@@ -3,5 +3,5 @@ mod sols;
 mod utils;
 
 fn main() {
-    sols::p587::solve_p587();
+    sols::p145::solve_p145();
 }
