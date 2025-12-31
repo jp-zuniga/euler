@@ -1,5 +1,5 @@
 # https://projecteuler.net/problem=36
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
 # Find the sum of all numbers, under 1 million,
 # which are palindromic in base 10 and base 2.
 

@@ -1,5 +1,5 @@
 // https://projecteuler.net/problem=17
-// --------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // If all the numbers from to 1 to 1,000 (inclusive)
 // were written out in words, how many letters would be used?
 

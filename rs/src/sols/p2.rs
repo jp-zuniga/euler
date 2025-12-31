@@ -1,3 +1,7 @@
+// https://projecteuler.net/problem=2
+// -------------------------------------------------------------------------------------
+// Find the sum of all the even Fibonacci numbers below 4 million.
+
 use std::time::Instant;
 
 use crate::utils::stopwatch;

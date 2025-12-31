@@ -1,9 +1,9 @@
 # https://projecteuler.net/problem=42
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
 # Formula for nth triangle number: (n * (n+1)) / 2
 # Word value: sum of each letter's position in the alphabet.
 # Triangle words: words whose value is a triangle number.
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
 # Find how many words in the given file are "triangle" words.
 
 # optimize < 1ms

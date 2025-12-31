@@ -1,5 +1,5 @@
 # https://projecteuler.net/problem=24
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
 # Find the millionth lexicographic permutation of the digits 0-9.
 
 # optimize < 100ms

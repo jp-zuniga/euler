@@ -1,5 +1,5 @@
 # https://projecteuler.net/problem=22
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
 # Find the sum of the scores of all the names listed in the given file.
 # The names must be in alphabetical order. A name's score is equal to the sum of
 # its letters' positions in the alphabet, multiplied by the name's position in the list.

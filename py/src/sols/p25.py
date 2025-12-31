@@ -1,5 +1,5 @@
 # https://projecteuler.net/problem=25
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
 # Find the index of the first term in the Fibonacci sequence to have 1000 digits.
 
 # optimize < 1ms

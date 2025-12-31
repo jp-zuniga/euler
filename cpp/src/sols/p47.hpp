@@ -1,5 +1,5 @@
 // https://projecteuler.net/problem=47
-// --------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // Find the first four consecutive integers to have four distinct prime
 // factors each.
 

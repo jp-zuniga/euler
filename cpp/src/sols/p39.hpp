@@ -1,5 +1,5 @@
 // https://projecteuler.net/problem=39
-// --------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // Let p be the perimeter of a right-angle triangle with integer sides.
 // For which value of p (<= 1000) is the number of solutions maximized?
 

@@ -1,5 +1,5 @@
 # https://projecteuler.net/problem=19
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
 # How many Sundays fell on the first of the month during the 20th century?
 
 # optimize < 5ms

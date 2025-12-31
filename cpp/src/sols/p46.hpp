@@ -1,5 +1,5 @@
 // https://projecteuler.net/problem=46
-// --------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // Find the smallest odd composite number that cannot
 // be written as the sum of a prime and twice a square.
 

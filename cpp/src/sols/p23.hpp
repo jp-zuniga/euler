@@ -1,8 +1,8 @@
 // https://projecteuler.net/problem=23
-// --------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // Abundant number: a number for which the total sum of
 // its proper divisors is greater than itself
-// --------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // Find the sum of all the positive integers which
 // cannot be written as the sum of two abundant numbers.
 
