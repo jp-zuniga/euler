@@ -1,5 +1,5 @@
 #[inline]
-pub fn is_prime(num: u64) -> bool {
+pub fn is_prime(n: u64) -> bool {
     static PRIME_LOOKUP: &[u64] = &[
         2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73,
         79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157,
@@ -14,36 +14,40 @@ pub fn is_prime(num: u64) -> bool {
         983, 991, 997,
     ];
 
+    if n <= 3 {
+        return n > 1;
+    }
+
     // easy mode
-    if num == 1 || num.is_multiple_of(2) {
+    if n.is_multiple_of(2) || n.is_multiple_of(3) {
         return false;
     }
 
     // cached prime
-    if PRIME_LOOKUP.binary_search(&num).is_ok() {
-        return true;
+    if n < 1000 {
+        return PRIME_LOOKUP.binary_search(&n).is_ok();
     }
 
     // divisible by cached prime (excluding 2)
-    if PRIME_LOOKUP[1..].iter().any(|x| num.is_multiple_of(*x)) {
+    if PRIME_LOOKUP[1..].iter().any(|&x| n.is_multiple_of(x)) {
         return false;
     }
 
     // check divisibility by primes in the form 6k ± 1
-    for i in (1001..).step_by(6).take_while(|&i| i * i <= num) {
+    for i in (1001..).step_by(6).take_while(|&i| i * i <= n) {
         // 6k - 1
-        if num.is_multiple_of(i) {
+        if n.is_multiple_of(i) {
             return false;
         }
 
-        // 6k + 2
+        // 6k + 1
         let j = i + 2;
-        if j * j > num {
+        if j * j > n {
             // all possible divisors have been checked
             break;
         }
 
-        if num.is_multiple_of(j) {
+        if n.is_multiple_of(j) {
             return false;
         }
     }
@@ -92,10 +96,10 @@ pub fn primes_up_to(n: u64) -> Vec<u64> {
 
 #[allow(clippy::cast_possible_truncation)]
 #[inline]
-pub fn prime_sieve(num: u64) -> Vec<bool> {
-    let half = num.div_ceil(2) as usize;
+pub fn prime_sieve_up_to(n: u64) -> Vec<bool> {
+    let half = n.div_ceil(2) as usize;
 
-    if num <= 2 {
+    if n <= 2 {
         return vec![false; half];
     }
 
@@ -103,11 +107,11 @@ pub fn prime_sieve(num: u64) -> Vec<bool> {
 
     sieve[0] = false;
 
-    for i in (3..).step_by(2).take_while(|&i| i * i <= num) {
+    for i in (3..).step_by(2).take_while(|&i| i * i <= n) {
         if sieve[(i / 2) as usize] {
             for j in ((i * i)..)
                 .step_by((2 * i) as usize)
-                .take_while(|&j| j <= num)
+                .take_while(|&j| j <= n)
             {
                 // set all multiples of i to false
                 sieve[(j / 2) as usize] = false;
@@ -119,46 +123,51 @@ pub fn prime_sieve(num: u64) -> Vec<bool> {
 }
 
 #[inline]
-pub fn prime_factors(mut num: u64) -> Vec<u64> {
+pub fn prime_factors_of(mut n: u64) -> Vec<u64> {
     let mut factors = Vec::new();
 
-    while num.is_multiple_of(2) {
+    while n.is_multiple_of(2) {
         factors.push(2);
-        num /= 2;
+        n /= 2;
     }
 
-    while num.is_multiple_of(3) {
+    while n.is_multiple_of(3) {
         factors.push(3);
-        num /= 3;
+        n /= 3;
     }
 
-    if num == 1 {
+    if n == 1 {
         return factors;
     }
 
     let mut i: u64 = 5;
-    while i * i <= num {
-        while num.is_multiple_of(i) {
+
+    // check divisibility by primes in the form 6k ± 1
+    while i * i <= n {
+        // 6k - 1
+        while n.is_multiple_of(i) {
             factors.push(i);
-            num /= i;
+            n /= i;
         }
 
+        // 6k + 1
         let j = i + 2;
-        if j * j > num {
+        if j * j > n {
+            // all possible divisors have been checked
             break;
         }
 
-        while num.is_multiple_of(j) {
+        while n.is_multiple_of(j) {
             factors.push(j);
-            num /= j;
+            n /= j;
         }
 
         i += 6;
     }
 
-    if num > 3 {
-        // num must be prime
-        factors.push(num);
+    if n > 3 {
+        // n must be prime
+        factors.push(n);
     }
 
     factors
