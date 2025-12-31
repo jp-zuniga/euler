@@ -52,6 +52,45 @@ pub fn is_prime(num: u64) -> bool {
 }
 
 #[allow(clippy::cast_possible_truncation)]
+#[allow(clippy::cast_precision_loss)]
+#[allow(clippy::cast_sign_loss)]
+#[inline]
+pub fn primes_up_to(n: u64) -> Vec<u64> {
+    if n < 2 {
+        return Vec::new();
+    }
+
+    let lim_f = n as f64;
+    let lim_odd = (n - 3) / 2 + 1;
+    let estimate = (lim_f / lim_f.ln()) as usize;
+
+    let mut primes = Vec::with_capacity(estimate);
+    let mut is_prime = vec![true; lim_odd as usize];
+
+    primes.push(2);
+
+    for i in 0..lim_odd {
+        if is_prime[i as usize] {
+            let p = (2 * i) + 3;
+            let p_sq = p * p;
+
+            primes.push(p);
+
+            if p_sq > n {
+                continue;
+            }
+
+            let start = (p_sq - 3) / 2;
+            for idx in (start..lim_odd).step_by(p as usize) {
+                is_prime[idx as usize] = false;
+            }
+        }
+    }
+
+    primes
+}
+
+#[allow(clippy::cast_possible_truncation)]
 #[inline]
 pub fn prime_sieve(num: u64) -> Vec<bool> {
     let half = num.div_ceil(2) as usize;
