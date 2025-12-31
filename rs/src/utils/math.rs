@@ -1,5 +1,5 @@
 #[inline]
-const fn gcd(mut a: i32, mut b: i32) -> i32 {
+const fn gcd(mut a: u64, mut b: u64) -> u64 {
     while b != 0 {
         (a, b) = (b, a % b);
     }
@@ -8,6 +8,6 @@ const fn gcd(mut a: i32, mut b: i32) -> i32 {
 }
 
 #[inline]
-pub const fn lcm(a: i32, b: i32) -> i32 {
+pub const fn lcm(a: u64, b: u64) -> u64 {
     (a / gcd(a, b)) * b
 }
